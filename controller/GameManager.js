@@ -67,3 +67,51 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
     // Update the actuator
     this.actuate();
   };
+
+   // Set up the initial tiles to start the game with
+  GameManager.prototype.addStartTiles = function () {
+    for (var i = 0; i < this.startTiles; i++) {
+      this.addRandomTile();
+    }
+  };
+  
+  // Adds a tile in a random position
+  GameManager.prototype.addRandomTile = function () {
+    if (this.grid.cellsAvailable()) {
+      var value = Math.random() < 0.9 ? 2 : 4;
+      var tile = new Tile(this.grid.randomAvailableCell(), value);
+  
+      this.grid.insertTile(tile);
+    }
+  };
+  
+  // Sends the updated grid to the actuator
+  GameManager.prototype.actuate = function () {
+    if (this.storageManager.getBestScore() < this.score) {
+      this.storageManager.setBestScore(this.score);
+    }
+  
+    // Clear the state when the game is over (game over only, not win)
+    if (this.over) {
+      this.storageManager.clearGameState();
+    } else {
+      this.storageManager.setGameState(this.serialize());
+    }
+  
+    // Changes  Handle Undo Button
+    var data = this.storageManager.getLastMove(false);
+    if (data !== null) {
+      document.getElementsByClassName("undo-button")[0].classList.remove("disabled");
+    } else {
+      document.getElementsByClassName("undo-button")[0].classList.add("disabled");
+    }
+  
+    this.actuator.actuate(this.grid, {
+      score:      this.score,
+      over:       this.over,
+      won:        this.won,
+      bestScore:  this.storageManager.getBestScore(),
+      terminated: this.isGameTerminated()
+    });
+  
+  };

@@ -115,3 +115,32 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
     });
   
   };
+
+  // Represent the current game as an object
+  GameManager.prototype.serialize = function () {
+    return {
+      grid:        this.grid.serialize(),
+      score:       this.score,
+      over:        this.over,
+      won:         this.won,
+      keepPlaying: this.keepPlaying
+    };
+  };
+  
+  // Save all tile positions and remove merger info
+  GameManager.prototype.prepareTiles = function () {
+    this.grid.eachCell(function (x, y, tile) {
+      if (tile) {
+        tile.mergedFrom = null;
+        tile.savePosition();
+      }
+    });
+  };
+  
+  // Move a tile and its representation
+  GameManager.prototype.moveTile = function (tile, cell) {
+    this.grid.cells[tile.x][tile.y] = null;
+    this.grid.cells[cell.x][cell.y] = tile;
+    tile.updatePosition(cell);
+  };
+  

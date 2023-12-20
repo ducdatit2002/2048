@@ -2,7 +2,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: #faf8ef;
+    background-image: url(./img/background.jpeg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #776e65;
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 18px; }
@@ -500,7 +502,8 @@ html, body {
     background: #bbada0; }
   
   .game-explanation {
-    margin-top: 50px; }
+    margin-top: 50px;
+    color: #F57D5E }
   
   @media screen and (max-width: 520px) {
     html, body {

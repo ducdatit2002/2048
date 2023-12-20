@@ -1,7 +1,7 @@
 
 # Data Visualization Project 
-Click here --> <a href="https://ducdatit2002.github.io/dsa-2048-project/" target="_blank">DABA Team</a>
-Click here for our Github --> <a href="https://github.com/ducdatit2002/dsa-2048-project" target="_blank">GitHub</a>
+Click here --> <a href="https://ducdatit2002.github.io/daba-2048/" target="_blank">DABA Team</a>
+Click here for our Github --> <a href="https://github.com/ducdatit2002/daba-2048" target="_blank">GitHub</a>
 
 ### Group: DABA TEAM
 ### Our team member

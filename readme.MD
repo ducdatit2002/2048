@@ -14,9 +14,9 @@ Click here for our Github --> <a href="https://github.com/ducdatit2002/daba-2048
 ### Tasks and Contribution 
 | Index | Role                                                         | Person In Charge | Contribution |
 |:------|:-------------------------------------------------------------|:--------------:|:------------:|
-| 1     | Leader     |   Đức Đạt   |          100%      |
-| 2     | Member      |   Lam Đạt   |          100%      |
-| 3     | Member  |  Vũ Bão     |      100%          |
+| 1     | Leader     |   Đức Đạt   |          33.34%      |
+| 2     | Member      |   Lam Đạt   |          33.33%      |
+| 3     | Member  |  Vũ Bão     |      33.33%          |
 
 
 | Name | Tasks |

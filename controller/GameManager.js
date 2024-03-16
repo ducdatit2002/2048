@@ -75,6 +75,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
     }
   };
   
+  
   // Adds a tile in a random position
   GameManager.prototype.addRandomTile = function () {
     if (this.grid.cellsAvailable()) {
@@ -160,7 +161,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
     // Changes 
     var dat = this.serialize();
   
-    // Save the current tile positions and remove merger information
+    // Save the current tile positixons and remove merger information
     this.prepareTiles();
   
     // Traverse the grid in the right direction and move tiles
